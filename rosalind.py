@@ -28,6 +28,12 @@ def write_List_Data(file_name, list):
 		file.write('\n')
 	file.close()
 
+def write_Data(file_name, data):
+	file = open(file_name, 'w')
+	file.write(str(data))
+	file.write('\n')
+	file.close
+
 def ReverseComplementaryDNA(str):
 	newstr = ""
 	for seq in str:

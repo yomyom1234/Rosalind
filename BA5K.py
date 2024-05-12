@@ -23,7 +23,7 @@ def CalculateScoreWithLastEdge(v, w, sigma, mat):
 	len_w = len(w)
 	previous = np.arange(0, (len_v + 1) * sigma , sigma)
 	current = np.arange(0, (len_v + 1) * sigma, sigma)
-	direction = np.zeros(len_v + 1, dtype=np.int32)
+	direction = np.full(len_v + 1, 2, dtype=np.int32)
 	score_matrix = np.array([mat[vi][wi] for wi in w for vi in v], dtype=np.int32).reshape(len_w, len_v)
 	for i in range(len_w):
 		current[0] = sigma * (i + 1)
@@ -45,9 +45,9 @@ def MiddleEdge(v, w, sigma, mat):
 	dir = dir[::-1]
 	return (middle_node, dir[middle_node[0]])
 
-v = "PLEA"
-w = "M"
-mat = bl.BLOSUM(62)
-start = time.time()
-print(MiddleEdge(v, w, -5, mat))
-print(time.time() - start)
+#v = "PLEA"
+#w = "M"
+#mat = bl.BLOSUM(62)
+#start = time.time()
+#print(MiddleEdge(v, w, -5, mat))
+#print(time.time() - start)
